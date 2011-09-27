@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+  	android:orientation="vertical"
+  	android:layout_width="fill_parent"
+  	android:layout_height="fill_parent" android:weightSum="1">
+<TextView  
+    android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+    android:text="@string/firstView"
+    />
+<Spinner 
+	android:layout_height="wrap_content" 
+	android:id="@+id/spinner1" 
+	android:layout_width="fill_parent" 
+	android:entries="@array/spinner1"
+	/>
+<Button 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:id="@+id/button1" 
+	android:text="作業開始" 
+	android:onClick="clickEventframLayoutFile"
+	/>
+<EditText android:layout_height="wrap_content" android:id="@+id/editText1" android:layout_width="fill_parent" android:layout_weight="0.26">
+    <requestFocus></requestFocus>
+</EditText>
+</LinearLayout>

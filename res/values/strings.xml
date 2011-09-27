@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="firstView">PSP Task Record, MainActivity</string>
+    <string name="secondView">Started PSP, SubActivity</string>
+    <string name="thirdView">Stopped PSP, CheckActivity</string>
+    <string name="thirdstopView">中断時間 (分)</string>
+    <string name="thirdcommentView">備考</string>
+    <string name="app_name">PSP Time Record</string>
+    <string-array name="spinner1">
+        <item>計画立案</item>
+    	<item>設計</item>
+    	<item>コーディング</item>
+    	<item>コンパイル</item>
+    	<item>テスト</item>
+    	<item>事後分析</item>
+    	<item>中断</item>
+    </string-array>
+</resources>
