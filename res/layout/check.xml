@@ -12,6 +12,11 @@
   <TextView  
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
+    android:id="@+id/problemtext"
+  />
+  <TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
     android:id="@+id/statetext"
   />
   <TextView  
@@ -49,6 +54,6 @@
     android:layout_height="wrap_content"
     android:id="@+id/button1" 
     android:onClick="clickEventframLayoutFile" 
-    android:text="書き込み"
+    android:text="Record"
   />
 </LinearLayout>

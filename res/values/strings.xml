@@ -3,16 +3,28 @@
     <string name="firstView">PSP Task Record, MainActivity</string>
     <string name="secondView">Started PSP, SubActivity</string>
     <string name="thirdView">Stopped PSP, CheckActivity</string>
-    <string name="thirdstopView">中断時間 (分)</string>
-    <string name="thirdcommentView">備考</string>
+    <string name="thirdstopView">Postmortem (M)</string>
+    <string name="thirdcommentView">Memo</string>
     <string name="app_name">PSP Time Record</string>
     <string-array name="spinner1">
-        <item>計画立案</item>
-    	<item>設計</item>
-    	<item>コーディング</item>
-    	<item>コンパイル</item>
-    	<item>テスト</item>
-    	<item>事後分析</item>
-    	<item>中断</item>
+        <item>Program No.01</item>
+        <item>Program No.02</item>
+        <item>Program No.03</item>
+        <item>Program No.04</item>
+        <item>Program No.05</item>
+        <item>Program No.06</item>
+        <item>Program No.07</item>
+        <item>Program No.08</item>
+        <item>Program No.09</item>
+        <item>Program No.10</item>
+    </string-array>
+    <string-array name="spinner2">
+        <item>Plan</item>
+    	<item>Design</item>
+    	<item>Code</item>
+    	<item>Compile</item>
+    	<item>Test</item>
+    	<item>Postmortem</item>
+    	<item>Interruption</item>
     </string-array>
 </resources>

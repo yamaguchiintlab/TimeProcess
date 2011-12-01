@@ -12,6 +12,11 @@
 <TextView  
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
+    android:id="@+id/probrems"
+    />
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
     android:id="@+id/states"
     />
 <TextView  
@@ -23,7 +28,7 @@
 	android:layout_width="fill_parent" 
 	android:layout_height="wrap_content"
 	android:id="@+id/button1" 
-	android:text="作業終了" 
+	android:text="End Process" 
 	android:onClick="clickEventframLayoutFile"
 	/>  
 </LinearLayout>

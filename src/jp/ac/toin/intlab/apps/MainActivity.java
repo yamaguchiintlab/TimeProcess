@@ -20,7 +20,10 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity 
 	implements OnItemSelectedListener {
+	Spinner problemSpinner;
 	Spinner stateSpinner;
+	String[] problems;
+	String problemNo;
 	String[] states;
 	String stateData;
     /** Called when the activity is first created. */
@@ -29,7 +32,8 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        stateSpinner = (Spinner)findViewById(R.id.spinner1);
+        problemSpinner = (Spinner)findViewById(R.id.spinner1);
+        stateSpinner = (Spinner)findViewById(R.id.spinner2);
         try{
         	InputStream in = openFileInput("a.txt");
         	BufferedReader reader =
@@ -44,15 +48,24 @@ public class MainActivity extends Activity
         }catch(IOException e){
         		e.printStackTrace();
         }
-        states = getResources().getStringArray(R.array.spinner1);
+        problems = getResources().getStringArray(R.array.spinner1);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                this,
+                android.R.layout.simple_spinner_item,
+                problems);
+        
+        problemSpinner.setAdapter(adapter);
+        problemSpinner.setOnItemSelectedListener(this);
+
+        states = getResources().getStringArray(R.array.spinner2);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(
           this,
           android.R.layout.simple_spinner_item,
           states);
-        adapter.setDropDownViewResource(
+        adapter2.setDropDownViewResource(
           android.R.layout.simple_spinner_dropdown_item);
         
-        stateSpinner.setAdapter(adapter);
+        stateSpinner.setAdapter(adapter2);
         stateSpinner.setOnItemSelectedListener(this);
         
      
@@ -76,6 +89,7 @@ public class MainActivity extends Activity
 						+ "-" + Integer.toString(hour24) 
 						+ ":" + Integer.toString(minute);
 				Intent intent = new Intent(MainActivity.this, SubActivity.class);
+				intent.putExtra("problem_no", problemNo);
 				intent.putExtra("state_data", stateData);
 				intent.putExtra("time_data", startTime);
 				startActivity(intent);
@@ -86,20 +100,35 @@ public class MainActivity extends Activity
 		Toast.makeText(this, "Clicked", Toast.LENGTH_LONG).show();
 	}
 	@Override
-	  public void onItemSelected(
+	public void onItemSelected(
 			    AdapterView<?> arg0, 
 			    View arg1, 
 			    int arg2,
 			    long arg3) {
 			    
 			    int i = arg0.getSelectedItemPosition();
+			    if(arg0.getId() == problemSpinner.getId()){
+			    Toast.makeText(
+					      this, 
+					      problems[i], 
+					      Toast.LENGTH_SHORT).show();
+			    Toast.makeText(
+			      this, 
+			      problems[i], 
+			      Toast.LENGTH_SHORT).show();
+			      problemNo = problems[i];
+			    } else if (arg0.getId() == stateSpinner.getId()){
+			      Toast.makeText(
+					      this, 
+					      states[i], 
+					      Toast.LENGTH_SHORT).show();
 			    Toast.makeText(
 			      this, 
 			      states[i], 
 			      Toast.LENGTH_SHORT).show();
 			      stateData = states[i];
+			    }
 			  }
-
 			  @Override
 			  public void onNothingSelected(AdapterView<?> arg0) {}
 

@@ -16,12 +16,15 @@ public class SubActivity extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sub);
+        final String problemNo = getIntent().getExtras().getString("problem_no");
         final String stateData = getIntent().getExtras().getString("state_data");
         final String startTime = getIntent().getExtras().getString("time_data");
-        TextView tv = (TextView) findViewById(R.id.states);
-        TextView tv2 = (TextView) findViewById(R.id.text);
-        tv.setText("作業工程：" + stateData);
-        tv2.setText("開始時間：" + startTime);
+        TextView tv = (TextView) findViewById(R.id.probrems);
+        TextView tv2 = (TextView) findViewById(R.id.states);
+        TextView tv3 = (TextView) findViewById(R.id.text);
+        tv.setText(problemNo);
+        tv2.setText("Process：" + stateData);
+        tv3.setText("Start：" + startTime);
         Button btn = (Button)findViewById(R.id.button1);
         btn.setOnClickListener(new View.OnClickListener() {
 			
@@ -43,6 +46,7 @@ public class SubActivity extends Activity{
 						+ ":" + Integer.toString(minute);
 				Intent intent2 = new Intent(SubActivity.this, CheckActivity.class);
 		        // String startTime = getIntent().getExtras().getString("time_data");
+				intent2.putExtra("problem_no", problemNo);
 				intent2.putExtra("state_data", stateData);
 				intent2.putExtra("start_time_data", startTime);
 				intent2.putExtra("end_time_data", endTime);

@@ -15,11 +15,17 @@
 	android:layout_width="fill_parent" 
 	android:entries="@array/spinner1"
 	/>
+<Spinner 
+	android:layout_height="wrap_content" 
+	android:id="@+id/spinner2" 
+	android:layout_width="fill_parent" 
+	android:entries="@array/spinner2"
+	/>
 <Button 
 	android:layout_width="fill_parent" 
 	android:layout_height="wrap_content"
 	android:id="@+id/button1" 
-	android:text="作業開始" 
+	android:text="Start Process" 
 	android:onClick="clickEventframLayoutFile"
 	/>
 <EditText android:layout_height="wrap_content" android:id="@+id/editText1" android:layout_width="fill_parent" android:layout_weight="0.26">

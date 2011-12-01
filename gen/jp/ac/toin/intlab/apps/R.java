@@ -10,6 +10,7 @@ package jp.ac.toin.intlab.apps;
 public final class R {
     public static final class array {
         public static final int spinner1=0x7f050000;
+        public static final int spinner2=0x7f050001;
     }
     public static final class attr {
     }
@@ -17,16 +18,19 @@ public final class R {
         public static final int icon=0x7f020000;
     }
     public static final class id {
-        public static final int button1=0x7f060005;
-        public static final int editComment=0x7f060004;
-        public static final int editStop=0x7f060003;
-        public static final int editText1=0x7f060007;
-        public static final int endtext=0x7f060002;
-        public static final int spinner1=0x7f060006;
-        public static final int starttext=0x7f060001;
-        public static final int states=0x7f060008;
-        public static final int statetext=0x7f060000;
-        public static final int text=0x7f060009;
+        public static final int button1=0x7f060006;
+        public static final int editComment=0x7f060005;
+        public static final int editStop=0x7f060004;
+        public static final int editText1=0x7f060009;
+        public static final int endtext=0x7f060003;
+        public static final int problemtext=0x7f060000;
+        public static final int probrems=0x7f06000a;
+        public static final int spinner1=0x7f060007;
+        public static final int spinner2=0x7f060008;
+        public static final int starttext=0x7f060002;
+        public static final int states=0x7f06000b;
+        public static final int statetext=0x7f060001;
+        public static final int text=0x7f06000c;
     }
     public static final class layout {
         public static final int check=0x7f030000;

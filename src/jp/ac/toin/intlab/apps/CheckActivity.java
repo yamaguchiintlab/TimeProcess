@@ -26,15 +26,18 @@ public class CheckActivity extends Activity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.check);
+        final String problemNo = getIntent().getExtras().getString("problem_no");
+        TextView tvProblem = (TextView) findViewById(R.id.problemtext);
+        tvProblem.setText(problemNo);
         final String stateData = getIntent().getExtras().getString("state_data");
         TextView tvState = (TextView) findViewById(R.id.statetext);
-        tvState.setText("作業工程："+ stateData);
+        tvState.setText("State:"+ stateData);
         final String startTime = getIntent().getExtras().getString("start_time_data");
         TextView tvStart = (TextView) findViewById(R.id.starttext);
-        tvStart.setText("開始時間："+ startTime);
+        tvStart.setText("Start:"+ startTime);
         final String endTime = getIntent().getExtras().getString("end_time_data");
         TextView tvEnd = (TextView) findViewById(R.id.endtext);
-        tvEnd.setText("終了時間：" + endTime);
+        tvEnd.setText("End:" + endTime);
         editStop = (EditText)findViewById(R.id.editStop);
         editComment = (EditText)findViewById(R.id.editComment);
         sharedPreferences = getSharedPreferences("record_PSP_Task", Context.MODE_PRIVATE);
@@ -47,6 +50,7 @@ public class CheckActivity extends Activity{
 				// finish();
 				/* 
 				SharedPreferences.Editor editor = sharedPreferences.edit();
+				editor.putString("problemNo", problemNo);
 				editor.putString("stateData", stateData);
 				editor.putString("startTime", startTime);
 				editor.putString("endTime", endTime);
@@ -68,11 +72,12 @@ public class CheckActivity extends Activity{
 					PrintWriter writer = new PrintWriter(new OutputStreamWriter(out,"UTF-8"));
 					//writer.append(s);
 					//writer.append("stateData:"+stateData+", ");
+					writer.append(problemNo+", ");
 					writer.append(stateData+", ");
 					writer.append(startTime+", ");
 					writer.append(endTime+", ");
-					writer.append("中断:"+editStop.getText().toString()+", ");
-					writer.append("コメント:"+editComment.getText().toString()+", \n");
+					writer.append("Interruption:"+editStop.getText().toString()+", ");
+					writer.append("Memo:"+editComment.getText().toString()+", \n");
 					writer.close();
 					Intent intent = new Intent(CheckActivity.this, MainActivity.class);
 					startActivity(intent);
